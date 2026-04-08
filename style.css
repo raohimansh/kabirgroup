@@ -10,24 +10,31 @@ body {
   color: white;
 }
 
+/* Glass Effect */
+.glass {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
 /* Navbar */
 .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 15px 20px;
 }
 
-.navbar h2 {
+.logo-text {
+  font-family: 'Orbitron', sans-serif;
   color: #ff3c3c;
+  letter-spacing: 2px;
 }
 
-.menu-btn {
-  font-size: 24px;
-  cursor: pointer;
-  display: none;
-}
-
+/* Nav links */
 .nav-links {
   display: flex;
   gap: 20px;
@@ -36,6 +43,38 @@ body {
 .nav-links a {
   text-decoration: none;
   color: white;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ff3c3c;
+}
+
+/* Search */
+.search-box {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.08);
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.search-box input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+}
+
+.search-box span {
+  margin-left: 5px;
+}
+
+/* Menu Button */
+.menu-btn {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
 }
 
 /* Mobile Menu */
@@ -52,19 +91,17 @@ body {
 .mobile-menu a {
   padding: 15px;
   border-bottom: 1px solid #333;
+  color: white;
+  text-decoration: none;
 }
 
 /* Hero */
 .hero {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   padding: 40px;
   min-height: 90vh;
-}
-
-.hero-text {
-  max-width: 500px;
 }
 
 .hero-text h1 {
@@ -92,18 +129,17 @@ body {
 /* Logo */
 .logo img {
   width: 220px;
-  filter: drop-shadow(0 0 8px red);
-  transition: 0.3s;
-}
-
-.logo img:hover {
-  transform: scale(1.05);
-  filter: drop-shadow(0 0 15px red);
+  filter: drop-shadow(0 0 10px red);
 }
 
 /* Sections */
 .section {
-  padding: 30px 20px;
+  padding: 40px 20px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 /* Cards */
@@ -118,11 +154,21 @@ body {
   padding: 20px;
   border-radius: 15px;
   backdrop-filter: blur(10px);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.contact-card {
+  max-width: 400px;
+  margin: auto;
 }
 
 /* Responsive */
 @media (max-width: 900px) {
-
   .menu-btn {
     display: block;
   }
@@ -142,6 +188,7 @@ body {
 
   .logo img {
     width: 180px;
+    margin-top: 20px;
   }
 
   .grid {
@@ -157,4 +204,9 @@ body {
   .hero-text h1 {
     font-size: 28px;
   }
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
 }

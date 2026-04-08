@@ -144,3 +144,51 @@ html {
   .grid {grid-template-columns: 1fr;}
   .hero {flex-direction: column;}
 }
+/* Navbar Animation */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: 0.3s;
+}
+
+/* On Scroll */
+.navbar.scrolled {
+  padding: 10px 20px;
+  backdrop-filter: blur(20px);
+  background: rgba(0,0,0,0.7);
+}
+
+/* Nav Items */
+.nav-item {
+  position: relative;
+  padding: 5px 10px;
+  transition: 0.3s;
+}
+
+/* Hover Effect */
+.nav-item:hover {
+  color: #ff3c3c;
+}
+
+/* Active Tab */
+.nav-item.active {
+  color: #ff3c3c;
+}
+
+/* Underline animation */
+.nav-item::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #ff3c3c;
+  left: 0;
+  bottom: -3px;
+  transition: 0.3s;
+}
+
+.nav-item:hover::after,
+.nav-item.active::after {
+  width: 100%;
+}

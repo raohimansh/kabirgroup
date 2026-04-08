@@ -6,29 +6,29 @@
 
 <title>Kabir Infra</title>
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-
-<!-- CSS -->
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+<!-- Animated Background -->
+<div class="bg-animation"></div>
 
 <!-- Navbar -->
 <div class="navbar glass">
   <h2 class="logo-text">Kabir Infra</h2>
 
   <div class="nav-links">
-    <a href="#home">Home</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
   </div>
 
   <!-- Search -->
   <div class="search-box">
-    <input type="text" placeholder="Search...">
-    <span>🔍</span>
+    <input type="text" id="searchInput" placeholder="Search services...">
+    <span onclick="searchSite()">🔍</span>
   </div>
 
   <div class="menu-btn" onclick="toggleMenu()">☰</div>
@@ -36,41 +36,20 @@
 
 <!-- Mobile Menu -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#home">Home</a>
-  <a href="#services">Services</a>
-  <a href="#contact">Contact</a>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="contact.html">Contact</a>
 </div>
 
 <!-- Hero -->
-<section id="home" class="hero">
+<section class="hero">
   <div class="hero-text">
     <h1>Innovate.<br><span>Transform.</span><br>Thrive.</h1>
-    <p>Kabir Integrated Infra & Services delivers smart infrastructure solutions.</p>
-    <button class="btn">Explore Services</button>
+    <p>Delivering smart infrastructure solutions across India.</p>
   </div>
 
   <div class="logo">
-    <img src="logo1.png" alt="logo">
-  </div>
-</section>
-
-<!-- Services -->
-<section id="services" class="section">
-  <h2 class="section-title">Our Services</h2>
-  <div class="grid">
-    <div class="card">Smart Meter Installation</div>
-    <div class="card">Electrical Works</div>
-    <div class="card">Manpower Supply</div>
-    <div class="card">Logistics & Field Ops</div>
-  </div>
-</section>
-
-<!-- Contact -->
-<section id="contact" class="section">
-  <div class="card contact-card">
-    <h3>Contact</h3>
-    <p>Uttar Pradesh, India</p>
-    <p>+91 XXXXX XXXXX</p>
+    <img src="logo1.png">
   </div>
 </section>
 

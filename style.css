@@ -111,7 +111,9 @@ body {
   max-width: 400px;
   margin: auto;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 /* Responsive */
 @media(max-width:768px){
   .grid {grid-template-columns: 1fr;}

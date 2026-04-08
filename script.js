@@ -3,9 +3,10 @@ function toggleMenu(){
   m.style.display = (m.style.display==="flex") ? "none":"flex";
 }
 
-/* Real Search */
 function searchSite(){
-  let query = document.getElementById("searchInput").value.toLowerCase();
+  let query = document.getElementById("searchInput")?.value.toLowerCase();
+
+  if(!query) return;
 
   if(query.includes("meter")) window.location.href="services.html";
   else if(query.includes("electrical")) window.location.href="services.html";

@@ -3,171 +3,211 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kabir Integrated Infra & Services</title>
+<title>Kabir Infra</title>
 
 <style>
-body {
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f5f5f5;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #000000, #1a0000, #330000);
+  color: white;
 }
 
 /* Navbar */
 .navbar {
-  background: #0b3d91;
-  color: white;
-  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  padding: 20px 40px;
+  backdrop-filter: blur(10px);
 }
 
 .navbar h2 {
-  margin: 0;
+  color: #ff3c3c;
 }
 
-.menu {
+.navbar a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+}
+
+/* Hero Section */
+.hero {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+}
+
+.hero-text h1 {
+  font-size: 60px;
+  line-height: 1.2;
+}
+
+.hero-text span {
+  color: #ff3c3c;
+}
+
+.hero-text p {
+  margin: 20px 0;
+  color: #ccc;
+}
+
+.btn {
+  padding: 12px 25px;
+  border-radius: 30px;
+  border: none;
+  background: #ff3c3c;
+  color: white;
   cursor: pointer;
 }
 
-/* Mobile Menu */
-.nav-links {
-  display: none;
-  background: #0b3d91;
-  text-align: center;
-}
-
-.nav-links a {
-  display: block;
-  padding: 10px;
-  color: white;
-  text-decoration: none;
-}
-
-.nav-links a:hover {
-  background: #062c6b;
-}
-
-/* Container */
-.container {
-  max-width: 900px;
-  margin: auto;
-  background: white;
+/* Glass Card */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
   padding: 30px;
-  margin-top: 20px;
-  border-radius: 10px;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.1);
+  margin: 20px;
+}
+
+/* Services */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 40px;
+}
+
+.card {
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
 }
 
 /* Logo */
-.logo {
+.logo img {
+  width: 150px;
+}
+
+/* Contact */
+.contact {
+  padding: 40px;
   text-align: center;
 }
 
-.logo img {
-  width: 200px;
+/* Animation */
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 1s;
 }
 
-/* Sections */
-h1, h2 {
-  color: #333;
+.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-p {
-  color: #555;
-}
-
-/* Button */
-.btn {
-  background: #0b3d91;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-.btn:hover {
-  background: #062c6b;
-}
-
-/* Hidden Content */
-.hidden {
-  display: none;
-}
 </style>
-
 </head>
+
 <body>
 
 <!-- Navbar -->
 <div class="navbar">
-  <h2>Kabir Group</h2>
-  <div class="menu" onclick="toggleMenu()">☰</div>
+  <h2>Kabir Infra</h2>
+  <div>
+    <a href="#">Home</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </div>
 </div>
 
-<div class="nav-links" id="navLinks">
-  <a href="#">Home</a>
-  <a href="#">Services</a>
-  <a href="#">Contact</a>
-</div>
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>Innovate.<br><span>Transform.</span><br>Thrive.</h1>
+    <p>Kabir Integrated Infra & Services delivers smart infrastructure solutions.</p>
+    <button class="btn">Explore Services</button>
+  </div>
 
-<!-- Main Content -->
-<div class="container">
-
-  <!-- Logo -->
   <div class="logo">
-    <img src="logo.jpeg" alt="Kabir Logo">
+    <img src="logo.jpeg">
+  </div>
+</section>
+
+<!-- Services -->
+<section class="services">
+
+  <div class="glass card fade">
+    <h2>Smart Meter</h2>
+    <p>Installation & maintenance services.</p>
   </div>
 
-  <h1>Kabir Integrated Infra & Services</h1>
+  <div class="glass card fade">
+    <h2>Electrical Works</h2>
+    <p>Complete electrical infrastructure solutions.</p>
+  </div>
 
-  <h2>Company Overview</h2>
-  <p>
-    Kabir Integrated Infra & Services is a multi-service company providing infrastructure,
-    electrical, manpower and technical solutions with focus on quality and timely delivery.
-  </p>
+  <div class="glass card fade">
+    <h2>Manpower</h2>
+    <p>Skilled workforce supply across projects.</p>
+  </div>
 
-  <h2>Vision</h2>
-  <p>To become a trusted and leading infra & service provider across India.</p>
+  <div class="glass card fade">
+    <h2>Logistics</h2>
+    <p>Efficient field and logistics operations.</p>
+  </div>
 
-  <h2>Mission</h2>
-  <p>To deliver high-quality, reliable and cost-effective solutions using modern technology.</p>
+</section>
 
-  <h2>Services</h2>
-  <p>
-    Smart Meter Installation, Electrical Works, Infrastructure Support,
-    Manpower Supply, Logistics & Field Operations.
-  </p>
+<!-- About -->
+<section class="services">
+  <div class="glass fade">
+    <h2>About Us</h2>
+    <p>
+      Kabir Integrated Infra & Services is a multi-service company providing infrastructure,
+      electrical, manpower and technical solutions with focus on quality and timely delivery.
+    </p>
+  </div>
 
-  <button class="btn" onclick="showMore()">Know More</button>
-
-  <div id="moreContent" class="hidden">
-    <h2>Experience</h2>
-    <p>Strong field experience in smart meter projects and team handling at circle level.</p>
-
+  <div class="glass fade">
     <h2>Why Choose Us</h2>
-    <p>Experienced team, fast execution, cost-effective services, quality and safety focus.</p>
+    <p>
+      Experienced team, fast execution, cost-effective services, quality and safety focus.
+    </p>
   </div>
+</section>
 
+<!-- Contact -->
+<section class="contact glass fade">
   <h2>Contact</h2>
-  <p>
-    Uttar Pradesh, India <br>
-    Phone: +91 XXXXX XXXXX <br>
-    Email: your email
-  </p>
-
-</div>
+  <p>Uttar Pradesh, India</p>
+  <p>Phone: +91 XXXXX XXXXX</p>
+</section>
 
 <script>
-function toggleMenu() {
-  let menu = document.getElementById("navLinks");
-  menu.style.display = (menu.style.display === "block") ? "none" : "block";
-}
+// Scroll Animation
+let elements = document.querySelectorAll('.fade');
 
-function showMore() {
-  let content = document.getElementById("moreContent");
-  content.classList.toggle("hidden");
-}
+window.addEventListener('scroll', () => {
+  elements.forEach(el => {
+    let position = el.getBoundingClientRect().top;
+    let screenHeight = window.innerHeight;
+
+    if(position < screenHeight - 100){
+      el.classList.add('show');
+    }
+  });
+});
 </script>
 
 </body>

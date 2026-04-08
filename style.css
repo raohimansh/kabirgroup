@@ -192,3 +192,18 @@ html {
 .nav-item.active::after {
   width: 100%;
 }
+/* Hide menu button on desktop */
+.menu-btn {
+  display: none;
+}
+
+/* Show only on mobile */
+@media (max-width: 900px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+  }
+}

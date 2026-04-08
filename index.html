@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kabir Groups</title>
+<title>Kabir Infra</title>
 
 <style>
 * {
@@ -22,32 +22,65 @@ body {
 .navbar {
   display: flex;
   justify-content: space-between;
-  padding: 20px 40px;
-  backdrop-filter: blur(10px);
+  align-items: center;
+  padding: 15px 20px;
 }
 
 .navbar h2 {
   color: #ff3c3c;
 }
 
-.navbar a {
-  margin-left: 20px;
+/* Menu button */
+.menu-btn {
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
   text-decoration: none;
   color: white;
 }
 
-/* Hero Section */
+/* Mobile menu */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: rgba(0,0,0,0.9);
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.mobile-menu a {
+  padding: 15px;
+  border-bottom: 1px solid #333;
+  color: white;
+}
+
+/* Hero */
 .hero {
-  height: 90vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 50px;
+  padding: 40px;
+  min-height: 90vh;
+}
+
+.hero-text {
+  max-width: 500px;
 }
 
 .hero-text h1 {
-  font-size: 60px;
-  line-height: 1.2;
+  font-size: 50px;
 }
 
 .hero-text span {
@@ -55,80 +88,111 @@ body {
 }
 
 .hero-text p {
-  margin: 20px 0;
+  margin: 15px 0;
   color: #ccc;
 }
 
 .btn {
-  padding: 12px 25px;
-  border-radius: 30px;
+  padding: 10px 20px;
+  border-radius: 25px;
   border: none;
   background: #ff3c3c;
   color: white;
   cursor: pointer;
 }
 
-/* Glass Card */
-.glass {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  padding: 30px;
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(255,255,255,0.1);
-  margin: 20px;
+/* Logo */
+.logo img {
+  width: 220px;
 }
 
-/* Services */
-.services {
+/* Sections */
+.section {
+  padding: 30px 20px;
+}
+
+/* Glass Cards */
+.grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  padding: 40px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 
 .card {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
   transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-5px);
 }
 
-/* Logo */
-.logo img {
-  width: 500px;
+/* Responsive */
+@media (max-width: 900px) {
+
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 36px;
+  }
+
+  .logo img {
+    width: 180px;
+    margin-top: 20px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-/* Contact */
-.contact {
-  padding: 40px;
-  text-align: center;
-}
+@media (max-width: 500px) {
 
-/* Animation */
-.fade {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: 1s;
-}
+  .grid {
+    grid-template-columns: 1fr;
+  }
 
-.show {
-  opacity: 1;
-  transform: translateY(0);
+  .hero-text h1 {
+    font-size: 28px;
+  }
 }
-
 </style>
+
 </head>
 
 <body>
 
 <!-- Navbar -->
 <div class="navbar">
-  <h2>Kabir Group</h2>
-  <div>
+  <h2>Kabir Infra</h2>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+  <div class="nav-links">
     <a href="#">Home</a>
     <a href="#">Services</a>
     <a href="#">Contact</a>
   </div>
+</div>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#">Home</a>
+  <a href="#">Services</a>
+  <a href="#">Contact</a>
 </div>
 
 <!-- Hero -->
@@ -145,69 +209,43 @@ body {
 </section>
 
 <!-- Services -->
-<section class="services">
-
-  <div class="glass card fade">
-    <h2>Smart Meter</h2>
-    <p>Installation & maintenance services.</p>
+<section class="section">
+  <div class="grid">
+    <div class="card">Smart Meter Installation</div>
+    <div class="card">Electrical Works</div>
+    <div class="card">Manpower Supply</div>
+    <div class="card">Logistics & Field Ops</div>
   </div>
-
-  <div class="glass card fade">
-    <h2>Electrical Works</h2>
-    <p>Complete electrical infrastructure solutions.</p>
-  </div>
-
-  <div class="glass card fade">
-    <h2>Manpower</h2>
-    <p>Skilled workforce supply across projects.</p>
-  </div>
-
-  <div class="glass card fade">
-    <h2>Logistics</h2>
-    <p>Efficient field and logistics operations.</p>
-  </div>
-
 </section>
 
 <!-- About -->
-<section class="services">
-  <div class="glass fade">
-    <h2>About Us</h2>
-    <p>
-      Kabir Integrated Infra & Services is a multi-service company providing infrastructure,
-      electrical, manpower and technical solutions with focus on quality and timely delivery.
-    </p>
-  </div>
-
-  <div class="glass fade">
-    <h2>Why Choose Us</h2>
-    <p>
-      Experienced team, fast execution, cost-effective services, quality and safety focus.
-    </p>
+<section class="section">
+  <div class="grid">
+    <div class="card">
+      <h3>About Us</h3>
+      <p>Multi-service company providing infrastructure and technical solutions.</p>
+    </div>
+    <div class="card">
+      <h3>Why Choose Us</h3>
+      <p>Experienced team, fast execution, cost-effective services.</p>
+    </div>
   </div>
 </section>
 
 <!-- Contact -->
-<section class="contact glass fade">
-  <h2>Contact</h2>
-  <p>Uttar Pradesh, India</p>
-  <p>Phone: +91 XXXXX XXXXX</p>
+<section class="section">
+  <div class="card">
+    <h3>Contact</h3>
+    <p>Uttar Pradesh, India</p>
+    <p>+91 XXXXX XXXXX</p>
+  </div>
 </section>
 
 <script>
-// Scroll Animation
-let elements = document.querySelectorAll('.fade');
-
-window.addEventListener('scroll', () => {
-  elements.forEach(el => {
-    let position = el.getBoundingClientRect().top;
-    let screenHeight = window.innerHeight;
-
-    if(position < screenHeight - 100){
-      el.classList.add('show');
-    }
-  });
-});
+function toggleMenu() {
+  let menu = document.getElementById("mobileMenu");
+  menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+}
 </script>
 
 </body>

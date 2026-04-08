@@ -1,6 +1,11 @@
 function toggleMenu(){
-  let m = document.getElementById("mobileMenu");
-  m.style.display = (m.style.display==="flex") ? "none":"flex";
+  let menu = document.getElementById("mobileMenu");
+
+  if(menu.style.display === "flex"){
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "flex";
+  }
 }
 
 function searchSite(){
